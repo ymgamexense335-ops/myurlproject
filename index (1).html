@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World!</h1>
+      <p id="currentTime"></p>
+      <script src="script.js"></script>
+  </body>
+</html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK EAGLE GPT HACKS - V80 ULTRA PRO</title>
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-magenta: #ff007b;
+            --gold: #ffd700;
+            --matrix-green: #00ff41;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: #000;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #game-view {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+            z-index: 1;
+        }
+
+        /* --- LOGO TRIGGER SIZE KEPT SAME --- */
+        #logo-trigger {
+            position: absolute;
+            top: 20px; left: 20px;
+            width: 60px; height: 60px;
+            z-index: 10000;
+            cursor: grab;
+            touch-action: none;
+        }
+
+        #logo-trigger img {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: json-flash-border 0.2s infinite;
+        }
+
+        /* --- HACK PANEL SIZE KEPT SAME --- */
+        #hack-container {
+            position: absolute;
+            top: 90px; right: 20px;
+            width: 270px;
+            z-index: 9999;
+            display: none;
+            touch-action: none;
+        }
+
+        #main-panel {
+            background: rgba(0, 0, 10, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* HEAVY JSON FLASHING BACKGROUND */
+        .json-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            font-size: 8px;
+            color: var(--neon-cyan);
+            opacity: 0.2;
+            white-space: pre;
+            pointer-events: none;
+            z-index: -1;
+            animation: json-scroll 0.5s infinite linear;
+        }
+
+        @keyframes json-scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        @keyframes json-flash-border {
+            0% { border-color: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
+            50% { border-color: var(--neon-magenta); box-shadow: 0 0 20px var(--neon-magenta); }
+            100% { border-color: var(--gold); box-shadow: 0 0 15px var(--gold); }
+        }
+
+        .header {
+            font-size: 14px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--neon-cyan);
+            color: #fff;
+        }
+
+        #typing-area {
+            font-size: 11px;
+            text-align: left;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: var(--matrix-green);
+            line-height: 1.4;
+            min-height: 60px;
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            margin-bottom: 10px;
+            background: #111;
+            border: 1px solid var(--neon-cyan);
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 11px;
+            transition: 0.2s;
+        }
+
+        .btn-activate { background: linear-gradient(90deg, #ff0000, #990000); }
+        .btn-predict { background: linear-gradient(90deg, #004e92, #00f2ff); display: none; }
+        .btn-hide { background: #333; font-size: 9px; margin-top: 10px; }
+
+        #result-section {
+            display: none;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            border-radius: 15px;
+            margin-top: 10px;
+            border: 1px solid var(--gold);
+        }
+
+        #prediction-text { font-size: 28px; font-weight: 900; color: var(--neon-cyan); }
+    </style>
+</head>
+<body>
+
+    <iframe src="https://kkeagle.com/#/register?invitationCode=93022100566" id="game-view"></iframe>
+
+    <div id="logo-trigger" onclick="togglePanel()">
+        <img src="https://uploads.onecompiler.io/447679hw7/44hwjp49v/KE%20Eagle%20with%20wealth%20and%20power.png" alt="Logo">
+    </div>
+
+    <div id="hack-container">
+        <div id="main-panel">
+            <div class="json-bg" id="json-layer"></div>
+            <div class="header">KK EAGLE GPT HACK</div>
+            
+            <div id="setup-section">
+                <div id="typing-area"></div>
+                <input type="text" id="uid-input" placeholder="ENTER GAME UID...">
+                <button class="btn btn-activate" onclick="activatePanel()">ACTIVATE SYSTEM</button>
+            </div>
+
+            <div id="active-content" style="display: none;">
+                <div style="font-size: 10px; color: var(--gold); margin-bottom: 10px;">
+                    PERIOD: <span id="p-id-bs">SYNCING...</span>
+                </div>
+                <div id="result-section">
+                    <div style="font-size: 9px;">PREDICTION</div>
+                    <div id="prediction-text">READY</div>
+                    <div style="font-size: 20px; color: var(--gold);" id="number-text">?</div>
+                </div>
+                <button class="btn btn-predict" id="predict-btn" onclick="runHack()">GET PREDICTION</button>
+            </div>
+
+            <button class="btn btn-hide" onclick="togglePanel()">HIDE PANEL</button>
+        </div>
+    </div>
+
+    <script>
+        // JSON Heavy Flashing Background Script
+        const jsonLayer = document.getElementById('json-layer');
+        const jsonData = '{"data":"inject","hash":"0x99a","status":"active"}\n{"cmd":"bypass","val":8821}\n{"packet":"send","id":99201}';
+        jsonLayer.innerText = jsonData.repeat(20);
+
+        // Typing Script (English)
+        const text = "1. Register with a new number.\n2. Do not login with your old ID.\n3. Recharge 500 PKR to activate this panel.";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing-area").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 40);
+            }
+        }
+        window.onload = typeWriter;
+
+        // YOUR NEW PERIOD ID CODE INTEGRATED
+        function updateTimer() {
+            const now = new Date();
+            const year = now.getUTCFullYear();
+            const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(now.getUTCDate()).padStart(2, '0');
+            const dateStr = `${year}${month}${day}`;
+
+            const totalMinutes = (now.getUTCHours() * 60) + now.getUTCMinutes() + 1;
+            const periodSuffix = String(totalMinutes).padStart(4, '0');
+
+            const fullID = dateStr + periodSuffix;
+            
+            const pIdElement = document.getElementById("p-id-bs");
+            if(pIdElement) pIdElement.innerText = fullID;
+            return fullID;
+        }
+        setInterval(updateTimer, 1000);
+
+        // Activation Logic
+        function activatePanel() {
+            const uid = document.getElementById("uid-input").value;
+            if(uid.length < 5) {
+                alert("Please enter a valid Game UID!");
+                return;
+            }
+            document.getElementById("setup-section").style.display = "none";
+            document.getElementById("active-content").style.display = "block";
+            document.getElementById("predict-btn").style.display = "block";
+            document.getElementById("result-section").style.display = "block";
+            updateTimer(); // Initial call
+        }
+
+        function togglePanel() {
+            const p = document.getElementById('hack-container');
+            p.style.display = (p.style.display === "none" || p.style.display === "") ? "block" : "none";
+        }
+
+        function runHack() {
+            const pText = document.getElementById("prediction-text");
+            const nText = document.getElementById("number-text");
+            pText.innerText = "WAIT";
+            nText.innerText = "..";
+
+            setTimeout(() => {
+                const num = Math.floor(Math.random() * 10);
+                const res = num >= 5 ? "BIG" : "SMALL";
+                pText.innerText = res;
+                pText.style.color = (res === "BIG") ? "var(--neon-cyan)" : "var(--neon-magenta)";
+                nText.innerText = num;
+                
+                // Heavy Flash Effect on result
+                document.getElementById("main-panel").style.animation = "json-flash-border 0.1s 5";
+                setTimeout(() => document.getElementById("main-panel").style.animation = "", 500);
+            }, 1000);
+        }
+
+        // Draggable System (Mobile/Desktop)
+        function enableDrag(el) {
+            let x = 0, y = 0, nx = 0, ny = 0;
+            el.onmousedown = dragStart;
+            el.ontouchstart = dragStart;
+
+            function dragStart(e) {
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+                nx = (e.type === "touchstart") ? e.touches[0].clientX : e.clientX;
+                ny = (e.type === "touchstart") ? e.touches[0].clientY : e.clientY;
+                document.onmouseup = () => { document.onmousemove = null; };
+                document.ontouchend = () => { document.ontouchmove = null; };
+                document.onmousemove = dragging;
+                document.ontouchmove = dragging;
+            }
+
+            function dragging(e) {
+                let cx = (e.type === "touchmove") ? e.touches[0].clientX : e.clientX;
+                let cy = (e.type === "touchmove") ? e.touches[0].clientY : e.clientY;
+                x = nx - cx; y = ny - cy;
+                nx = cx; ny = cy;
+                el.style.top = (el.offsetTop - y) + "px";
+                el.style.left = (el.offsetLeft - x) + "px";
+            }
+        }
+
+        enableDrag(document.getElementById("hack-container"));
+        enableDrag(document.getElementById("logo-trigger"));
+    </script>
+</body>
+</html>
